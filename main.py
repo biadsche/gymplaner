@@ -1,5 +1,6 @@
-from core.models import WeightedExercise, SetLoad
-from core.workout import Workout
+from gymplaner.core.exercises import WeightedExercise, SetLoad
+from core.workoutplan import WorkoutPlan
+
 
 
 

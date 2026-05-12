@@ -1,4 +1,4 @@
-from .models import Exercise, WeightedExercise, TimeExercise
+from .exercises import Exercise, WeightedExercise, TimeExercise
 
 
 class WorkoutPlan:

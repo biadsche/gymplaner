@@ -1,1 +1,3 @@
-from .models import WeightedExercise, SetLoad, TimeExercise, SetTime
+from .exercises import WeightedExercise, SetLoad, TimeExercise, SetTime
+from .workoutplan import WorkoutPlan
+from .split import Split
