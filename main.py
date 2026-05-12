@@ -1,7 +1,5 @@
-from gymplaner.core import models
+from core.models import WeightedExercise, SetLoad
+from core.workout import Workout
 
-Exer
 
-if __name__ == "__main__":
-    ex1 = Exercise("Lateral Raise", 5, 20, 15, "Cos")
-    print(ex1)
+
