@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Wyciskanie Żołnierskie (OHP)",
+        "type": "weighted",
+        "target_muscles": [
+            "FRONT_DELTS",
+            "TRICEPS",
+            "CORE_GENERAL"
+        ],
+        "note": "Ścisły core, bez wybijania z nóg"
+    },
+    {
+        "name": "Podciąganie z obciążeniem",
+        "type": "weighted",
+        "target_muscles": [
+            "LATS",
+            "BICEPS",
+            "BACK_GENERAL"
+        ],
+        "note": "Nachwyt"
+    },
+    {
+        "name": "Front Lever (Waga przodem)",
+        "type": "time",
+        "target_muscles": [
+            "LATS",
+            "CORE_GENERAL",
+            "ABS"
+        ],
+        "note": ""
+    }
+]
