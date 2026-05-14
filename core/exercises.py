@@ -1,7 +1,4 @@
 from enum import StrEnum
-
-from enum import StrEnum
-
 class MuscleGroup(StrEnum):
     # Klatka piersiowa (Chest)
     CHEST_GENERAL = "CHEST_GENERAL"   # Ogólnie klatka (np. płaskie wyciskanie)
