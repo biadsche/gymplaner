@@ -60,38 +60,35 @@ class SetTime:
 
 
 class ExerciseLog:
-    def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
-        self.name = name
-        self.target_muscles = target_muscles if target_muscles else []
-        self.note = note
+    def __init__(self, exercise_id):
+        self.exersise_id = exercise_id
     
     def __str__(self) -> str:
-
-        muscles_str = ", ".join(self.target_muscles) if self.target_muscles else ""
-
-        parts = [self.name]
-        if muscles_str:
-            parts.append(f"[{muscles_str}]")
-        if self.note:
-            parts.append(f"- {self.note}")
-            
-        return " ".join(parts)
+        return f"ID: {self.exercise_id}]"
 
 
 
 class WeightedExerciseLog(ExerciseLog):
-    def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
-        super().__init__(name, target_muscles, note)
+    def __init__(self, exercise_id: str):
+        super().__init__(exercise_id)
         self.sets_list = []
 
     def add_set(self, set_load: SetLoad):
         self.sets_list.append(set_load)
+        
+    def __str__(self) -> str:
+        sets_str = ", ".join([str(s) for s in self.sets_list])
+        return f"Log (Weighted)[ID: {self.exercise_id}] | Sets: {sets_str}"
 
 
 class TimeExerciseLog(ExerciseLog):
-    def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
-        super().__init__(name, target_muscles, note)
+    def __init__(self, exercise_id: str):
+        super().__init__(exercise_id)
         self.sets_list = []
+        
     def add_set(self, set_time: SetTime):
-        self.sets_list.append(set_time) 
-
+        self.sets_list.append(set_time)
+        
+    def __str__(self) -> str:
+        sets_str = ", ".join([str(s) for s in self.sets_list])
+        return f"Log (Time) [ID: {self.exercise_id}] | Sets: {sets_str}"

@@ -3,7 +3,7 @@ import os
 from .exercises import MuscleGroup
 import uuid
 
-#TODO dodanie id do cwiczen (wazne)
+
 class ExerciseRepository:
     def __init__(self, file_path: str = "gymplaner/data/exercisesrepo.json"):
         self.file_path = file_path
