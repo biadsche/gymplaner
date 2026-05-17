@@ -47,6 +47,12 @@ class SetLoad:
     def __str__(self) -> str:
         return f"{self.reps} x {self.load}kg"
     
+    def to_dict(self) -> dict:
+        return {
+            "reps": self.reps,
+            "load": self.load
+        }
+    
 
 class SetTime:
     def __init__(self, time: float):
@@ -54,7 +60,11 @@ class SetTime:
 
     def __str__(self) -> str:
         return f"{self.time}s"
-
+    def to_dict(self) -> dict:
+        return {
+            "reps": self.time,
+            "load": self.load
+        }
 
 
 
@@ -79,6 +89,12 @@ class WeightedExerciseLog(ExerciseLog):
     def __str__(self) -> str:
         sets_str = ", ".join([str(s) for s in self.sets_list])
         return f"Log (Weighted)[ID: {self.exercise_id}] | Sets: {sets_str}"
+    def to_dict(self) -> dict:
+        return {
+            "exercise_id": self.exercise_id,
+            "sets": [single_set.to_dict() for single_set in self.sets_list] 
+        }
+    
 
 
 class TimeExerciseLog(ExerciseLog):
@@ -92,3 +108,9 @@ class TimeExerciseLog(ExerciseLog):
     def __str__(self) -> str:
         sets_str = ", ".join([str(s) for s in self.sets_list])
         return f"Log (Time) [ID: {self.exercise_id}] | Sets: {sets_str}"
+   
+    def to_dict(self) -> dict:
+        return {
+            "exercise_id": self.exercise_id,
+            "sets": [single_set.to_dict() for single_set in self.sets_list] 
+        }
