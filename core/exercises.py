@@ -59,7 +59,7 @@ class SetTime:
 
 
 
-class Exercise:
+class ExerciseLog:
     def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
         self.name = name
         self.target_muscles = target_muscles if target_muscles else []
@@ -79,7 +79,7 @@ class Exercise:
 
 
 
-class WeightedExercise(Exercise):
+class WeightedExerciseLog(ExerciseLog):
     def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
         super().__init__(name, target_muscles, note)
         self.sets_list = []
@@ -88,7 +88,7 @@ class WeightedExercise(Exercise):
         self.sets_list.append(set_load)
 
 
-class TimeExercise(Exercise):
+class TimeExerciseLog(ExerciseLog):
     def __init__(self, name: str, target_muscles: list[MuscleGroup] = None, note: str = ""):
         super().__init__(name, target_muscles, note)
         self.sets_list = []
