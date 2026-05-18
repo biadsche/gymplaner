@@ -30,7 +30,8 @@ class ExerciseRepository:
         for exercise in self.exercise_list:
             if exercise["name"].lower() == name.lower():
                 return None
-                
+        #TODO tu mozna to tak przepisac zeby uzyc metody to_dict
+                    
         new_exercise_id = str(uuid.uuid4())
         muscles_list = [muscle.value for muscle in target_muscles] if target_muscles else []
         new_exercise = {
