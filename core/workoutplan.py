@@ -1,5 +1,4 @@
-from .exercises import Exercise, WeightedExercise, TimeExercise
-
+#TODO ten workoutplan moznaby przepisac bo to po chuju jest napisane
 
 class WorkoutPlan:
     def __init__(self, name : str, weekday: str):

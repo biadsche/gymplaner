@@ -1,4 +1,3 @@
-from .workoutplan import WorkoutPlan
 
 class Split:
     def __init__(self, name):

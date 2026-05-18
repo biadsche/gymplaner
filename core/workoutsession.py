@@ -1,7 +1,5 @@
 import datetime
 import uuid
-from .exercises import ExerciseLog, WeightedExerciseLog, TimeExerciseLog
-from .workoutplan import WorkoutPlan
 
 class WorkoutSession:
     def __init__(self, date: datetime.date, workout_plan_id: str | None = None):
