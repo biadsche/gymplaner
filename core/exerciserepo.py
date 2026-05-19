@@ -45,7 +45,7 @@ class ExerciseRepository:
         self.exercise_list.append(new_exercise)
         
         with open(self.file_path, 'w', encoding='utf-8') as repo_file:
-            json.dump(self.exercises_list, repo_file, indent=4, ensure_ascii=False)
+            json.dump(self.exercise_list, repo_file, indent=4, ensure_ascii=False)
             
         return new_exercise_id
     
@@ -59,7 +59,7 @@ class ExerciseRepository:
 
     def get_exercise_by_muscle(self, searching_target_muscle: str) -> list[dict]:
 
-        matching_exercises = {}
+        matching_exercises = []
         
         for exercise in self.exercise_list:        
             for target_muscle in exercise["target_muscles"]:

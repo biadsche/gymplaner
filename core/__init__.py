@@ -8,3 +8,15 @@ from .workoutsession import WorkoutSession
 
 
 
+__all__ = [
+    "ExerciseRepository",
+    "MuscleGroup",
+    "WeightedExerciseLog",
+    "SetLoad",
+    "Split",
+    "TimeExerciseLog",
+    "SetTime",
+    "WorkoutHistoryRepository",
+    "WorkoutPlan",
+    "WorkoutSession"   
+]

@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "id": "c1b52a78-43d5-41a2-81e5-8a21f6479b1a",
+    "name": "Weighted Pull-up",
+    "type": "Streetlifting",
+    "target_muscles": ["Back", "Biceps", "Core"],
+    "note": "Pełny zakres ruchu, eksplozywna faza koncentryczna."
+  },
+  {
+    "id": "e2f183c5-90d2-43b9-a912-32b71c18a14b",
+    "name": "Weighted Dip",
+    "type": "Streetlifting",
+    "target_muscles": ["Chest", "Triceps", "Shoulders"],
+    "note": "Zatrzymanie na dole, łokcie blisko ciała."
+  },
+  {
+    "id": "7a4d9831-2f6c-48c1-b957-61e8c92a543f",
+    "name": "Front Lever",
+    "type": "Statics",
+    "target_muscles": ["Lats", "Core"],
+    "note": "Proste ręce, sylwetka w poziomie, retrakcja łopatek."
+  },
+  {
+    "id": "9b1c2e45-7f3a-491b-85d6-1a89b345c67d",
+    "name": "Straddle Planche",
+    "type": "Statics",
+    "target_muscles": ["Shoulders", "Core"],
+    "note": "Maksymalna protrakcja i depresja łopatek, proste łokcie."
+  },
+  {
+    "id": "d3f4a189-5c2b-4781-9123-b6a7f8e91234",
+    "name": "Barbell Squat",
+    "type": "Strength",
+    "target_muscles": ["Legs"],
+    "note": "High bar, głęboki przysiad."
+  }
+]
