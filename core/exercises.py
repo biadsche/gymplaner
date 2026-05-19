@@ -62,8 +62,7 @@ class SetTime:
         return f"{self.time}s"
     def to_dict(self) -> dict:
         return {
-            "reps": self.time,
-            "load": self.load
+            "time": self.time
         }
 
 
@@ -71,7 +70,7 @@ class SetTime:
 
 class ExerciseLog:
     def __init__(self, exercise_id):
-        self.exersise_id = exercise_id
+        self.exercise_id = exercise_id
     
     def __str__(self) -> str:
         return f"ID: {self.exercise_id}]"

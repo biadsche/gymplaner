@@ -5,13 +5,16 @@ import uuid
 
 
 class ExerciseRepository:
-    def __init__(self, file_path: str = "gymplaner/data/exercisesrepo.json"):
+    def __init__(self, file_path: str = "data/exercisesrepo.json"):
         self.file_path = file_path
         self.exercise_list = []
         self.file_exists_check()
         self.load_database()
     
     def file_exists_check(self):
+        dir_name = os.path.dirname(self.file_path)
+        if dir_name and not os.path.isdir(dir_name):
+            os.makedirs(dir_name, exist_ok=True)
         if os.path.exists(self.file_path):
             return True
         else:

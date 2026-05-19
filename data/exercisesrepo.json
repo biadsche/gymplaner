@@ -1,37 +1,69 @@
 [
-  {
-    "id": "c1b52a78-43d5-41a2-81e5-8a21f6479b1a",
-    "name": "Weighted Pull-up",
-    "type": "Streetlifting",
-    "target_muscles": ["Back", "Biceps", "Core"],
-    "note": "Pełny zakres ruchu, eksplozywna faza koncentryczna."
-  },
-  {
-    "id": "e2f183c5-90d2-43b9-a912-32b71c18a14b",
-    "name": "Weighted Dip",
-    "type": "Streetlifting",
-    "target_muscles": ["Chest", "Triceps", "Shoulders"],
-    "note": "Zatrzymanie na dole, łokcie blisko ciała."
-  },
-  {
-    "id": "7a4d9831-2f6c-48c1-b957-61e8c92a543f",
-    "name": "Front Lever",
-    "type": "Statics",
-    "target_muscles": ["Lats", "Core"],
-    "note": "Proste ręce, sylwetka w poziomie, retrakcja łopatek."
-  },
-  {
-    "id": "9b1c2e45-7f3a-491b-85d6-1a89b345c67d",
-    "name": "Straddle Planche",
-    "type": "Statics",
-    "target_muscles": ["Shoulders", "Core"],
-    "note": "Maksymalna protrakcja i depresja łopatek, proste łokcie."
-  },
-  {
-    "id": "d3f4a189-5c2b-4781-9123-b6a7f8e91234",
-    "name": "Barbell Squat",
-    "type": "Strength",
-    "target_muscles": ["Legs"],
-    "note": "High bar, głęboki przysiad."
-  }
+    {
+        "id": "11a2b3c4-d5e6-7f8a-9b0c-1d2e3f4a5b6c",
+        "name": "Weighted Pull-up",
+        "type": "Streetlifting",
+        "target_muscles": [
+            "Back",
+            "Biceps",
+            "Core"
+        ],
+        "note": "Eksplozywna faza koncentryczna, pełny zwis na dole."
+    },
+    {
+        "id": "22b3c4d5-e6f7-8a9b-0c1d-2e3f4a5b6c7d",
+        "name": "Weighted Dip",
+        "type": "Streetlifting",
+        "target_muscles": [
+            "Chest",
+            "Triceps",
+            "Shoulders"
+        ],
+        "note": "Łokcie prowadzone blisko ciała, zatrzymanie w dolnej fazie."
+    },
+    {
+        "id": "33c4d5e6-f7a8-9b0c-1d2e-3f4a5b6c7d8e",
+        "name": "Straddle Planche",
+        "type": "Statics",
+        "target_muscles": [
+            "Shoulders",
+            "Core",
+            "Chest"
+        ],
+        "note": "Maksymalna protrakcja i depresja łopatek, całkowicie proste łokcie."
+    },
+    {
+        "id": "44d5e6f7-a8b9-0c1d-2e3f-4a5b6c7d8e9f",
+        "name": "Front Lever",
+        "type": "Statics",
+        "target_muscles": [
+            "Back",
+            "Core"
+        ],
+        "note": "Agresywna retrakcja łopatek, sylwetka trzymana idealnie w poziomie."
+    },
+    {
+        "id": "55e6f7a8-b9c0-1d2e-3f4a-5b6c7d8e9f0a",
+        "name": "Pistol Squat",
+        "type": "Calisthenics",
+        "target_muscles": [
+            "Legs",
+            "Core"
+        ],
+        "note": "Powolna faza ekscentryczna, napięcie pośladka na górze."
+    },
+    {
+        "id": "90396b3a-0407-4222-9ffe-1d8818e50a38",
+        "name": "Bicep Curls",
+        "type": "1: Timed Exercise",
+        "target_muscles": [],
+        "note": "Empty Note"
+    },
+    {
+        "id": "00f2a0ba-e28e-4ab7-9b92-7d4f25378435",
+        "name": "Leg Press",
+        "type": "2: Weighted Exercise",
+        "target_muscles": [],
+        "note": "Empty Note"
+    }
 ]

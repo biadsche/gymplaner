@@ -3,12 +3,17 @@
 #TODO funkcjonalnosc agenta do jakiegos planowania albo cos
 #TODO mozliwosc resetowania goali
 
-from core.exerciserepo import ExerciseRepository
-from cli.menu import menu
+from core import ExerciseRepository, WorkoutHistoryRepository
+from cli import menu
+
+
+
 
 def main():
-    repo = ExerciseRepository()
-    menu(repo)
+    exercise_repo = ExerciseRepository()
+    workout_repo = WorkoutHistoryRepository()
+    menu(exercise_repo, workout_repo)
+    
 
 
 

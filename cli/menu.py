@@ -3,13 +3,12 @@ from rich.panel import Panel
 from rich.prompt import Prompt
 from rich.console import Console
 
-from exercisesmenu import exercisemenu
+from .exercisesmenu import exercisemenu
 
-def menu():
+def menu(exercise_repo, workout_repo):
     while True:
         console = Console()
         console.clear()
-
         menu_options = """[green]1.[/] Log Traning
 [green]2.[/] Exercises
 [green]4.[/] Workouts
@@ -22,8 +21,6 @@ def menu():
                         title="[bold cyan]GYMPLANER - MAIN MENU[/]", 
                         subtitle="Press number and press ENTER"))
 
-
-
         response = Prompt.ask(
             "[bold cyan]Choose option[/] [[green]1[/]/[green]2[/]/[green]3[/]/[bold red]0[/]]", 
             choices=["1", "2", "3", "0"],
@@ -32,9 +29,9 @@ def menu():
 
         if response == "0":
             break
-        if response == "1":
+        elif response == "2":
             console.clear()
-            exercisemenu()
+            exercisemenu(exercise_repo)
 
 
 
