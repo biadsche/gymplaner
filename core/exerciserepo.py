@@ -73,5 +73,9 @@ class ExerciseRepository:
         return matching_exercises
 
 
+    def remove_exercise(self, exercise_id: str):
+        self.exercise_list = [ex for ex in self.exercise_list if ex["id"] != exercise_id]
+        with open(self.file_path, 'w', encoding='utf-8') as repo_file:
+                json.dump(self.exercise_list, repo_file, indent=4, ensure_ascii=False)
 
 #TODO kiedys implementacja raga do lepszego wyszukiwania cwiczen

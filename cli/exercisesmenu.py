@@ -4,9 +4,14 @@ from rich.prompt import Prompt
 from rich.console import Console
 from rich.prompt import Confirm
 
-from core.exerciserepo import ExerciseRepository
-import time
 from rich.progress import track
+from core.exerciserepo import ExerciseRepository
+
+import time
+import questionary
+
+from core.exercises import MuscleGroup
+
 
 def exercisemenu(exercise_repo):
     while True:
@@ -15,7 +20,8 @@ def exercisemenu(exercise_repo):
 
         menu_options = """[green]1.[/] Add Exercise
 [green]2.[/] Show saved Exercises
-[green]3.[/] Search for an Exercise
+[green]3.[/] Remove Exercise
+[green]4.[/] Search for an Exercise
 [bold red]0.[/] Main Menu"""
 
 
@@ -33,6 +39,8 @@ def exercisemenu(exercise_repo):
             add_exercise_ui(exercise_repo)
         elif response == "2":
             show_saved_exercises(exercise_repo)
+        elif response =="3":
+            removing_exercises_ui(exercise_repo)
 
         elif response == "0":
             break
@@ -64,16 +72,35 @@ def add_exercise_ui(exercise_repo):
                 title = "[light_sky_blue1]NEW EXERCISE CREATOR[n]"
           ))
     
-    name = Prompt.ask("[royal_blue1]1. Enter name of your exercise: [/]").strip()
+    name = Prompt.ask("[light_sky_blue1]1. Enter name of your exercise: [/]").strip()
     if exercise_repo.get_exercise_by_name(name):
         print("[red3]This exercise already exists[/]")
         input("\n Press ENTER to go back...")
         return 
     
-    exercise_type = Prompt.ask(
-        "[light_sky_blue1]2. Type of your exercise[/]",
-        choices=["1: Timed Exercise", "2: Weighted Exercise"]
-    )
+    
+
+
+    exercise_type = questionary.select(
+        "Select type of your exercise",
+        choices = [
+            "Weighted Exercise",
+            "Timed Exercise"
+        ]).ask()
+
+    choices = [
+        questionary.Choice(title=muscle.value, value=muscle) 
+        for muscle in MuscleGroup
+    ]
+
+    selected_muscles = questionary.checkbox(
+        "3. Select target muscles (Space to select, Enter to confirm):",
+        choices=choices,
+        style=questionary.Style([('qmark', 'fg:cyan bold'), ('question', 'fg:lightskyblue')])
+    ).ask()
+
+    if selected_muscles is None:
+        selected_muscles = []
 
     note = Prompt.ask(
         "[light_sky_blue1]3. Note for the exercise [/] [dim](optional)[/]", 
@@ -92,3 +119,36 @@ def add_exercise_ui(exercise_repo):
         console.print("[bold red] Cancelled [/]")
     
     input("\n Press ENTER, to come back")
+
+
+
+def removing_exercises_ui(exercise_repo):
+    console = Console()
+    console.clear()
+    instruction = """[bold cyan]Fill all of the field below to add exercise to repository[/]"""
+
+    choices = [
+    questionary.Choice(
+        title=f'{exercise["name"]} ({", ".join(exercise["target_muscles"])})', 
+        value=exercise["id"]
+    ) 
+    for exercise in exercise_repo.exercise_list
+    ]
+
+    selected_exercises = questionary.checkbox(
+        "Select exercises to remove(Space to select, Enter to confirm):",
+        choices=choices,
+        style=questionary.Style([('qmark', 'fg:cyan bold'), ('question', 'fg:lightskyblue')])
+    ).ask()
+
+    if not selected_exercises:
+        console.print("[bold yellow]No exercises removed.[/]")
+        input("\nPress ENTER to go back...")
+        return
+
+
+    for exercise_id in selected_exercises:
+        exercise_repo.remove_exercise(exercise_id)
+    
+    console.print(f"[bold green]Successfully removed {len(selected_exercises)} exercises![/]")
+    input("\nPress ENTER to go back...")
