@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": "7a279367-da89-4d50-9adf-7eb0fc125663",
+        "name": "Lat PullDown",
+        "type": "Weighted Exercise",
+        "target_muscles": [],
+        "note": "Empty Note"
+    },
+    {
+        "id": "01dc55b1-819b-468e-98f0-a125e4a917b5",
+        "name": "Bicep Curls",
+        "type": "Weighted Exercise",
+        "target_muscles": [],
+        "note": "Empty Note"
+    }
+]
