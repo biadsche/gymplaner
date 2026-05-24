@@ -24,6 +24,7 @@ def exercisemenu(exercise_repo):
 [green]4.[/] Search for an Exercise
 [bold red]0.[/] Main Menu"""
 
+#TODO zmienic obramowanie bo ENTER urywa
 
         print(Panel.fit(menu_options,
                         title="[bold cyan] EXERCISE MENU [/]",
@@ -31,7 +32,7 @@ def exercisemenu(exercise_repo):
 
         response = Prompt.ask(
                 "[bold cyan]Choose option[/] [[green]1[/]/[green]2[/]/[green]3[/]/[bold red]0[/]]", 
-                choices=["1", "2","3"],
+                choices=["1", "2","3","0"],
                 show_choices=False
             )
 
@@ -51,7 +52,7 @@ def exercisemenu(exercise_repo):
 def show_saved_exercises(exercise_repo):
     console = Console()
     console.clear()
-#TODO do ulepszenia
+#TODO do ulepszenia zeby to sie pokazywalo w formie tabeli
     print("\n[bold cyan]--- SAVED EXERCISES ---[/]")
     for exercise in exercise_repo.exercise_list:
         name = exercise["name"]
@@ -111,7 +112,7 @@ def add_exercise_ui(exercise_repo):
     is_confirmed = Confirm.ask("[bold green] Are you sure you want to save this exercise?[/]")
 
     if is_confirmed:
-        exercise_repo.add_exercise(name=name, exercise_type = exercise_type, target_muscles = [], note = note)
+        exercise_repo.add_exercise(name=name, exercise_type = exercise_type, target_muscles = selected_muscles, note = note)
         for i in track(range(3), description="Processing..."):
             time.sleep(1)
         console.print("[bold green] Succes your exercise was added to your exercises")
