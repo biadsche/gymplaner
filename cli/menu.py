@@ -13,15 +13,13 @@ def menu(exercise_repo, workout_repo):
         menu_options = """[green]1.[/] Log Traning
 [green]2.[/] Exercises
 [green]3.[/] Workouts
-[green]4.[/] Splits 
-[green]5.[/] History and progress
 [bold red]0.[/] Exit"""
     
 
         print(Panel.fit(menu_options, 
                         title="[bold cyan]GYMPLANER - MAIN MENU[/]", 
-                        subtitle="Press number and press ENTER",
-                        padding=(0,6)))
+                        subtitle="Choose a number and press ENTER",
+                        padding=(0,12)))
         
 
         response = Prompt.ask(

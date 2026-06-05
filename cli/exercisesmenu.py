@@ -23,8 +23,6 @@ def exercisemenu(exercise_repo):
 [bold red]0.[/] Main Menu"""
 
 
-#TODO zmienic obramowanie bo ENTER urywa
-
         print(Panel.fit(menu_options,
                         title="[bold cyan] EXERCISE MENU [/]",
                         subtitle="Press number and press ENTER",
@@ -32,7 +30,7 @@ def exercisemenu(exercise_repo):
 
         response = Prompt.ask(
                 "[bold cyan]Choose option[/] [[green]1[/]/[green]2[/]/[green]3[/]/[bold red]0[/]]", 
-                choices=["1", "2","3","0"],
+                choices=["1", "2","3","4","0"],
                 show_choices=False
             )
 
@@ -42,7 +40,8 @@ def exercisemenu(exercise_repo):
             show_saved_exercises(exercise_repo)
         elif response =="3":
             removing_exercises_ui(exercise_repo)
-
+        elif response == "4":
+            search_exercise_ui(exercise_repo)
         elif response == "0":
             break
 
@@ -89,16 +88,20 @@ def add_exercise_ui(exercise_repo):
             "Timed Exercise"
         ]).ask()
 
-    choices = [
-        questionary.Choice(title=muscle.value, value=muscle) 
-        for muscle in MuscleGroup
-    ]
+    choices = []
+    
+
+    for group_name, muscles in MuscleGroup.get_grouped().items():
+        choices.append(questionary.Separator(f"\n=== {group_name} ==="))
+        for muscle in muscles:
+            choices.append(questionary.Choice(title=f"  {muscle.value}", value=muscle))
 
     selected_muscles = questionary.checkbox(
-        "3. Select target muscles (Space to select, Enter to confirm):",
+        "Select target muscles (Space to select, Enter to confirm):",
         choices=choices,
         style=questionary.Style([('qmark', 'fg:cyan bold'), ('question', 'fg:lightskyblue')])
     ).ask()
+
 
     if selected_muscles is None:
         selected_muscles = []
@@ -150,4 +153,37 @@ def removing_exercises_ui(exercise_repo):
         exercise_repo.remove_exercise(exercise_id)
     
     console.print(f"[bold green]Successfully removed {len(selected_exercises)} exercises![/]")
+    input("\nPress ENTER to go back...")
+
+
+def search_exercise_ui(exercise_repo):
+    console = Console()
+    console.clear()
+    
+    console.print(Panel.fit("[bold cyan]Search for an exercise by its name.[/]", title="[bold green]EXERCISE SEARCH[/]"))
+    
+    
+    search_term = Prompt.ask("[light_sky_blue1]Enter exercise name (or part of it)[/]").strip().lower()
+    
+    if not search_term:
+        console.print("[bold yellow]Search cancelled.[/]")
+        input("\nPress ENTER to go back...")
+        return
+
+    results = list(filter(
+        lambda ex: search_term in ex["name"].lower(), 
+        exercise_repo.exercise_list
+    ))
+    
+    console.clear()
+    console.print(f"[bold cyan]--- SEARCH RESULTS FOR '{search_term.upper()}' ---[/]\n")
+    
+    if not results:
+        console.print(f"[bold red]No exercises found containing '{search_term}'.[/]")
+    else:
+        console.print(f"[bold green]Found {len(results)} exercise(s):[/]\n")
+        for ex in results:
+            muscles = ", ".join(ex["target_muscles"])
+            console.print(f"• [bold light_sky_blue1]{ex['name']}[/] | Type: {ex['type']} | Muscles: {muscles}")
+            
     input("\nPress ENTER to go back...")

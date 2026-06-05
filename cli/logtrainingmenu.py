@@ -32,6 +32,11 @@ def logtrainingmenu(exercise_repo, workout_repo):
             choices=choices
         ).ask()
         
+        if selected_exercise_id is None:
+            console.print("[bold red]Action cancelled.[/]")
+            break
+
+
         if selected_exercise_id == "EXIT":
             break
         elif selected_exercise_id == "NEW":

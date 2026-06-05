@@ -1,37 +1,46 @@
 from enum import StrEnum
 class MuscleGroup(StrEnum):
-    # Klatka piersiowa (Chest)
-    CHEST_GENERAL = "CHEST_GENERAL"   # Ogólnie klatka (np. płaskie wyciskanie)
-    CHEST_UPPER = "CHEST_UPPER"       # Górna część klatki (np. wyciskanie na skosie dodatnim)
-    CHEST_LOWER = "CHEST_LOWER"       # Dolna część klatki (np. dipy)
+    CHEST_GENERAL = "CHEST_GENERAL" 
+    CHEST_UPPER = "CHEST_UPPER"      
+    CHEST_LOWER = "CHEST_LOWER"      
 
-    # Barki (Shoulders / Deltoids)
-    FRONT_DELTS = "FRONT_DELTS"       # Przedni akton barku (np. OHP)
-    SIDE_DELTS = "SIDE_DELTS"         # Boczny akton barku (np. wznosy bokiem)
-    REAR_DELTS = "REAR_DELTS"         # Tylny akton barku (np. face pull)
+  
+    FRONT_DELTS = "FRONT_DELTS"      
+    SIDE_DELTS = "SIDE_DELTS"         
+    REAR_DELTS = "REAR_DELTS"        
 
-    # Plecy (Back)
-    BACK_GENERAL = "BACK_GENERAL"     # Ogólnie plecy 
-    LATS = "LATS"                     # Mięsień najszerszy grzbietu (np. podciąganie)
-    TRAPS = "TRAPS"                   # Mięsień czworoboczny / "kaptury" (np. szrugsy)
-    LOWER_BACK = "LOWER_BACK"         # Prostowniki / dół pleców (np. martwy ciąg, ławka rzymska)
-    RHOMBOIDS = "RHOMBOIDS"           # Mięśnie równoległoboczne (środek pleców)
-
-    # Nogi (Legs)
-    QUADS = "QUADS"                   # Czworogłowe / przód uda (np. przysiady, wyprosty)
-    HAMSTRINGS = "HAMSTRINGS"         # Dwugłowe / tył uda (np. martwy ciąg na prostych nogach, uginanie)
-    GLUTES = "GLUTES"                 # Pośladki (np. hip thrusty)
-    CALVES = "CALVES"                 # Łydki (np. wspięcia na palce)
-
-    # Ramiona (Arms)
-    BICEPS = "BICEPS"                 # Biceps
-    TRICEPS = "TRICEPS"               # Triceps
-    FOREARMS = "FOREARMS"             # Przedramiona
+  
+    BACK_GENERAL = "BACK_GENERAL"    
+    LATS = "LATS"                     
+    TRAPS = "TRAPS"                  
+    LOWER_BACK = "LOWER_BACK"        
+    RHOMBOIDS = "RHOMBOIDS"           
+   
+    QUADS = "QUADS"                  
+    HAMSTRINGS = "HAMSTRINGS"        
+    GLUTES = "GLUTES"              
+    CALVES = "CALVES"                 
 
 
-    ABS = "ABS"                       # Mięsień prosty brzucha ("kaloryfer")
-    OBLIQUES = "OBLIQUES"             # Mięśnie skośne brzucha
-    CORE_GENERAL = "CORE_GENERAL"     # Ogólnie mięśnie głębokie (np. plank)
+    BICEPS = "BICEPS"                 
+    TRICEPS = "TRICEPS"               
+    FOREARMS = "FOREARMS"             
+
+
+    ABS = "ABS"                       
+    OBLIQUES = "OBLIQUES"             
+    CORE_GENERAL = "CORE_GENERAL"     
+    
+    @classmethod
+    def get_grouped(cls) -> dict:
+        return {
+            "CHEST": [cls.CHEST_GENERAL, cls.CHEST_UPPER, cls.CHEST_LOWER],
+            "SHOULDERS": [cls.FRONT_DELTS, cls.SIDE_DELTS, cls.REAR_DELTS],
+            "BACK": [cls.BACK_GENERAL, cls.LATS, cls.TRAPS, cls.LOWER_BACK, cls.RHOMBOIDS],
+            "LEGS": [cls.QUADS, cls.HAMSTRINGS, cls.GLUTES, cls.CALVES],
+            "ARMS": [cls.BICEPS, cls.TRICEPS, cls.FOREARMS],
+            "CORE & ABS": [cls.ABS, cls.OBLIQUES, cls.CORE_GENERAL]
+        }
 
 
 

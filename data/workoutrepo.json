@@ -177,5 +177,25 @@
                 ]
             }
         ]
+    },
+    {
+        "session_id": "d57e75ba-51d4-4069-b645-588f0d438255",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "83e49057-00af-4b55-b67f-6ae121080479",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 115.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 100.0
+                    }
+                ]
+            }
+        ]
     }
 ]

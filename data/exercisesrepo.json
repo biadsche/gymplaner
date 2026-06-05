@@ -28,5 +28,16 @@
             "CHEST_GENERAL"
         ],
         "note": "Empty Note"
+    },
+    {
+        "id": "a34465de-2781-4d9a-880d-97fe6f1931f4",
+        "name": "Cos tam",
+        "type": "Weighted Exercise",
+        "target_muscles": [
+            "CHEST_UPPER",
+            "CHEST_LOWER",
+            "FRONT_DELTS"
+        ],
+        "note": "Empty Note"
     }
 ]
