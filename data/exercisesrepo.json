@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "id": "248a95e3-f264-4961-9562-d1bb0208091f",
+        "name": "Lat PullDown",
+        "type": "Weighted Exercise",
+        "target_muscles": [
+            "LATS",
+            "BICEPS"
+        ],
+        "note": "Empty Note"
+    },
+    {
+        "id": "4e927fbb-bcd6-4b6f-af0c-74d750a5846b",
+        "name": "Squat",
+        "type": "Weighted Exercise",
+        "target_muscles": [
+            "QUADS",
+            "HAMSTRINGS",
+            "GLUTES"
+        ],
+        "note": "Empty Note"
+    }
+]

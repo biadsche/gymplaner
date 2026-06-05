@@ -4,7 +4,7 @@ from .workoutsession import WorkoutSession
 
 #TODO przy pisaniu juz maina zhardcodowac sciezke
 class WorkoutHistoryRepository:
-    def __init__(self, file_path: str = "gymplaner/data/workoutrepo.json"):
+    def __init__(self, file_path: str = "data/workoutrepo.json"):
         self.file_path = file_path
         self.workout_list = []
         self.file_exists_check()

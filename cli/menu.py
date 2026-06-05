@@ -4,6 +4,7 @@ from rich.prompt import Prompt
 from rich.console import Console
 
 from .exercisesmenu import exercisemenu
+from cli.logtrainingmenu import logtrainingmenu
 
 def menu(exercise_repo, workout_repo):
     while True:
@@ -31,6 +32,9 @@ def menu(exercise_repo, workout_repo):
 
         if response == "0":
             break
+        elif response == "1":
+            console.clear()
+            logtrainingmenu(exercise_repo,workout_repo)   
         elif response == "2":
             console.clear()
             exercisemenu(exercise_repo)

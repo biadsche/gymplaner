@@ -1,0 +1,27 @@
+[
+    {
+        "session_id": "f0eb484b-17ed-4aa6-8184-117fb9e50a5a",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "248a95e3-f264-4961-9562-d1bb0208091f",
+                "sets": [
+                    {
+                        "reps": 10,
+                        "load": 50.0
+                    }
+                ]
+            },
+            {
+                "exercise_id": "4e927fbb-bcd6-4b6f-af0c-74d750a5846b",
+                "sets": [
+                    {
+                        "reps": 10,
+                        "load": 30.0
+                    }
+                ]
+            }
+        ]
+    }
+]
