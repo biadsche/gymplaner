@@ -24,11 +24,13 @@ def exercisemenu(exercise_repo):
 [green]4.[/] Search for an Exercise
 [bold red]0.[/] Main Menu"""
 
+
 #TODO zmienic obramowanie bo ENTER urywa
 
         print(Panel.fit(menu_options,
                         title="[bold cyan] EXERCISE MENU [/]",
-                        subtitle="Press number and press ENTER"))
+                        subtitle="Press number and press ENTER",
+                        padding=(0,6)))
 
         response = Prompt.ask(
                 "[bold cyan]Choose option[/] [[green]1[/]/[green]2[/]/[green]3[/]/[bold red]0[/]]", 

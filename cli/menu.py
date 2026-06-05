@@ -11,7 +11,7 @@ def menu(exercise_repo, workout_repo):
         console.clear()
         menu_options = """[green]1.[/] Log Traning
 [green]2.[/] Exercises
-[green]4.[/] Workouts
+[green]3.[/] Workouts
 [green]4.[/] Splits 
 [green]5.[/] History and progress
 [bold red]0.[/] Exit"""
@@ -19,7 +19,9 @@ def menu(exercise_repo, workout_repo):
 
         print(Panel.fit(menu_options, 
                         title="[bold cyan]GYMPLANER - MAIN MENU[/]", 
-                        subtitle="Press number and press ENTER"))
+                        subtitle="Press number and press ENTER",
+                        padding=(0,6)))
+        
 
         response = Prompt.ask(
             "[bold cyan]Choose option[/] [[green]1[/]/[green]2[/]/[green]3[/]/[bold red]0[/]]", 
