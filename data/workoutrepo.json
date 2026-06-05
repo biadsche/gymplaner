@@ -23,5 +23,159 @@
                 ]
             }
         ]
+    },
+    {
+        "session_id": "3aa3df9d-ec27-4373-b7d8-3229febe661f",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "248a95e3-f264-4961-9562-d1bb0208091f",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 45.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 50.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 70.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "session_id": "8bcb4b6d-0bfa-4905-b899-5f52935669bd",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "248a95e3-f264-4961-9562-d1bb0208091f",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    }
+                ]
+            },
+            {
+                "exercise_id": "4e927fbb-bcd6-4b6f-af0c-74d750a5846b",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 60.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "session_id": "ed15882c-cded-431b-9ccd-9c2a1a2858b2",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "4e927fbb-bcd6-4b6f-af0c-74d750a5846b",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 90.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 50.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 75.0
+                    }
+                ]
+            },
+            {
+                "exercise_id": "71d5af85-9a80-4988-a7e4-fd03a7e4c946",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 1.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 1.0
+                    },
+                    {
+                        "reps": 8,
+                        "load": 1.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "session_id": "e3667656-4448-48e5-871d-2193cbc9b0b7",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "71d5af85-9a80-4988-a7e4-fd03a7e4c946",
+                "sets": [
+                    {
+                        "reps": 8,
+                        "load": 1.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "session_id": "089a9aa6-8bcd-4959-a71c-2a69b118aaa4",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "a21c8a2b-fe8a-4b30-81a6-e8a45f5380af",
+                "sets": [
+                    {
+                        "reps": 2,
+                        "load": 5.0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "session_id": "a0b46d73-b63c-4a39-93c3-8eeeee5b8678",
+        "date": "2026-06-05",
+        "workout_plan_id": null,
+        "exercises": [
+            {
+                "exercise_id": "NEW",
+                "sets": [
+                    {
+                        "reps": 7,
+                        "load": 1.0
+                    }
+                ]
+            }
+        ]
     }
 ]

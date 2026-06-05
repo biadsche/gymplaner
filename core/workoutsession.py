@@ -20,20 +20,10 @@ class WorkoutSession:
         self.is_completed = True
     
     
-    #TODO to jest do zmienienia na razie to tylko place holer to wazne!!!!    
-    def __str__(self):
-        status = "ZAKOŃCZONY" if self.is_completed else "W TRAKCIE"
-        plan_info = f"Szablon: {self.workout_plan_id}" if self.workout_plan_id else "Własny trening"
-        
-        header = f"=== Sesja ({status}) | Data: {self.date} | {plan_info} ==="
-        logs = [str(log) for log in self.exercises_list]
-        
-        return "\n".join([header] + logs)
-    
     def to_dict(self) -> dict:
         return {
             "session_id": self.session_id,
-            "date": str(self.date), # WAŻNE: JSON nie rozumie obiektów daty, musisz zamienić to na tekst (str)!
+            "date": str(self.date),
             "workout_plan_id": self.workout_plan_id,
             "exercises": [exercise.to_dict() for exercise in self.exercises_list]
         }

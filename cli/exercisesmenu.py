@@ -4,10 +4,8 @@ from rich.prompt import Prompt
 from rich.console import Console
 from rich.prompt import Confirm
 
-from rich.progress import track
-from core.exerciserepo import ExerciseRepository
 
-import time
+
 import questionary
 
 from core.exercises import MuscleGroup
@@ -115,8 +113,6 @@ def add_exercise_ui(exercise_repo):
 
     if is_confirmed:
         exercise_repo.add_exercise(name=name, exercise_type = exercise_type, target_muscles = selected_muscles, note = note)
-        for i in track(range(3), description="Processing..."):
-            time.sleep(1)
         console.print("[bold green] Succes your exercise was added to your exercises")
     else:
         console.print("[bold red] Cancelled [/]")
@@ -128,7 +124,7 @@ def add_exercise_ui(exercise_repo):
 def removing_exercises_ui(exercise_repo):
     console = Console()
     console.clear()
-    instruction = """[bold cyan]Fill all of the field below to add exercise to repository[/]"""
+
 
     choices = [
     questionary.Choice(

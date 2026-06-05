@@ -19,5 +19,14 @@
             "GLUTES"
         ],
         "note": "Empty Note"
+    },
+    {
+        "id": "83e49057-00af-4b55-b67f-6ae121080479",
+        "name": "Bench Press",
+        "type": "Weighted Exercise",
+        "target_muscles": [
+            "CHEST_GENERAL"
+        ],
+        "note": "Empty Note"
     }
 ]
